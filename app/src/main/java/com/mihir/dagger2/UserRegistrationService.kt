@@ -7,7 +7,9 @@ import javax.inject.Inject
 
 
 
-class UserRegistrationService @Inject constructor(val user : UserRepsitory,/*@Named("email")*/ @MessageQuilifier val emailService: NotificationService) {
+class UserRegistrationService @Inject constructor(
+    val user : UserRepsitory,
+    /*@Named("email")*/ @MessageQuilifier val emailService: NotificationService) {
 
     fun registerUserRepo(email: String,pass : String){
         user.registerUser(email,pass)
