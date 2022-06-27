@@ -1,4 +1,4 @@
-package com.mihir.dagger2.day_1.dagger
+package com.mihir.dagger2.day_1.component
 
 import com.mihir.dagger2.day_1.MainActivity
 import com.mihir.dagger2.day_1.Modules.MessageModule

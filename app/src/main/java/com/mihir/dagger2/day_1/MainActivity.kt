@@ -3,7 +3,8 @@ package com.mihir.dagger2.day_1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.mihir.dagger2.R
-import com.mihir.dagger2.day_1.dagger.DaggerUserRegistrationComponent
+import com.mihir.dagger2.day_1.component.DaggerUserRegistrationComponent
+import com.mihir.dagger2.day_1.enities.UserRegistrationService
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

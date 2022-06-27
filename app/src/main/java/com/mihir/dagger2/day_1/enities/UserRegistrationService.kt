@@ -1,7 +1,6 @@
-package com.mihir.dagger2.day_1
+package com.mihir.dagger2.day_1.enities
 
-import com.mihir.dagger2.day_1.enities.NotificationService
-import com.mihir.dagger2.day_1.enities.UserRepsitory
+import com.mihir.dagger2.day_1.MessageQuilifier
 import javax.inject.Inject
 
 
