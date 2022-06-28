@@ -10,13 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dagger2">
         <activity
-            android:name=".day_1.MainActivity"
+            android:name=".day_2.MainActivity2"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".day_1.MainActivity"
+            android:exported="true">
+
         </activity>
     </application>
 

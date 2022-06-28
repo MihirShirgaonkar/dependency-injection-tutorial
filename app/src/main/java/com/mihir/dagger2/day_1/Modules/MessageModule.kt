@@ -9,13 +9,13 @@ import dagger.Provides
 import javax.inject.Named
 
 @Module
-class MessageModule {
+class MessageModule(private val count : Int) {
 
 
     @MessageQuilifier
     @Provides
     fun getMessageModule() : NotificationService {
-        return MessageService()
+        return MessageService(count)
     }
 
     @Named("email")
