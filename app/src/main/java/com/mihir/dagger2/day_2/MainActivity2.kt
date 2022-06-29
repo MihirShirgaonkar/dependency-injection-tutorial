@@ -5,8 +5,13 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import com.mihir.dagger2.R
+import com.mihir.dagger2.UserApplication
+import com.mihir.dagger2.day_2.component.AnalyticsService
 import com.mihir.dagger2.day_2.component.DaggerMainActivityComponent
 import com.mihir.dagger2.day_2.component.MainActivityComponent
+import com.mihir.dagger2.day_2.component.Mixpanel
+import com.mihir.dagger2.day_2.entities.EmailService
+import com.mihir.dagger2.day_2.entities.MessageService
 import com.mihir.dagger2.day_2.entities.UserRegestrationService
 import com.mihir.dagger2.day_2.modules.NotificationModule
 import javax.inject.Inject
@@ -15,6 +20,18 @@ class MainActivity2 : AppCompatActivity() {
 
     @Inject
     lateinit var userRegestrationService: UserRegestrationService
+
+    @Inject
+    lateinit var messageService: EmailService
+    @Inject
+    lateinit var messageService2: EmailService
+
+    @Inject
+    lateinit var mixpanel: AnalyticsService
+
+    @Inject
+    lateinit var mixpanel2: AnalyticsService
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,13 +43,15 @@ class MainActivity2 : AppCompatActivity() {
 
 
 
-        btn.setOnClickListener{
-            val component = DaggerMainActivityComponent.factory().create(et.text.toString().toInt())
+            val appcomponent = (application as UserApplication).appComponent
+
+        val component = DaggerMainActivityComponent.factory().create(23,appcomponent.getAnalytics())
             component.inject(this)
+
 
             userRegestrationService.registerUser("Mihir","shirgaonkarmihir14@gmail.com","hello.... mihir here")
 
-        }
+
 
     }
 }
