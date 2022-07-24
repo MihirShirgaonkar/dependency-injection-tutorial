@@ -14,8 +14,8 @@ class NotificationModule() {
 
     @Named("message")
     @Provides
-    fun getMessageModule(retryCount : Int) : NotificarionService2{
-        return MessageService(retryCount)
+    fun getMessageModule(@Named("zxc") retryCount : Int,@Named("asd") retryCount2 : Int) : NotificarionService2{
+        return MessageService(retryCount,retryCount2)
     }
 
     @Named("email")

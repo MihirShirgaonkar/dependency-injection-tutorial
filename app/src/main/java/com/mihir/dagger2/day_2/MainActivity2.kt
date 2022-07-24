@@ -7,7 +7,6 @@ import android.widget.EditText
 import com.mihir.dagger2.R
 import com.mihir.dagger2.UserApplication
 import com.mihir.dagger2.day_2.component.AnalyticsService
-import com.mihir.dagger2.day_2.component.DaggerMainActivityComponent
 import com.mihir.dagger2.day_2.component.MainActivityComponent
 import com.mihir.dagger2.day_2.component.Mixpanel
 import com.mihir.dagger2.day_2.entities.EmailService
@@ -45,11 +44,14 @@ class MainActivity2 : AppCompatActivity() {
 
             val appcomponent = (application as UserApplication).appComponent
 
-        val component = DaggerMainActivityComponent.factory().create(23,appcomponent.getAnalytics())
+        val component =appcomponent.getMainActivityComponent()
+            .retrycount1(1)
+            .retrycount2(2)
+            .build()
             component.inject(this)
 
 
-            userRegestrationService.registerUser("Mihir","shirgaonkarmihir14@gmail.com","hello.... mihir here")
+                userRegestrationService.registerUser("Mihir","shirgaonkarmihir14@gmail.com","hello.... mihir here")
 
 
 

@@ -5,18 +5,24 @@ import com.mihir.dagger2.day_2.modules.NotificationModule
 import com.mihir.dagger2.day_2.modules.UserDetailModule
 import dagger.BindsInstance
 import dagger.Component
+import dagger.Subcomponent
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Singleton
-@Component(dependencies = [AnalyticsService::class], modules = [NotificationModule::class,UserDetailModule::class])
+@Subcomponent( modules = [NotificationModule::class,UserDetailModule::class])
 interface MainActivityComponent {
 
 
     fun inject(mainActivity2: MainActivity2)
 
-    @Component.Factory
-    interface Factory {
+    @Subcomponent.Builder
+    interface Builder {
 
-    fun create(@BindsInstance retryCount: Int,analyticsService: AnalyticsService): MainActivityComponent
+        fun build() : MainActivityComponent
+
+        fun retrycount1(@BindsInstance @Named("zxc") retryCount: Int) : Builder
+        fun retrycount2(@BindsInstance @Named("asd") retryCount: Int) : Builder
+
 }
 }

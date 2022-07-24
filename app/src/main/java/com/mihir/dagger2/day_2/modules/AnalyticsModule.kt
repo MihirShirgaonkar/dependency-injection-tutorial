@@ -9,7 +9,7 @@ import javax.inject.Singleton
 @Module
 abstract class AnalyticsModule {
 
-    @Singleton
+    @AppScope
     @Binds
     abstract fun getMixpanelModule(mixpanel :Mixpanel) : AnalyticsService
 }

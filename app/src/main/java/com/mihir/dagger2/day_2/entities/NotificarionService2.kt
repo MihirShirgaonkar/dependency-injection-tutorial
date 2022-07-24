@@ -9,9 +9,9 @@ interface NotificarionService2 {
 }
 
 
-class MessageService @Inject constructor(private val retryCount : Int) : NotificarionService2 {
+class MessageService @Inject constructor(private val retryCount : Int,private val retryCount2 : Int) : NotificarionService2 {
     override fun send(string: String) {
-        Log.d("MyTag","Message - $string retry count - $retryCount")
+        Log.d("MyTag","Message - $string retry count - $retryCount, count2 : $retryCount2")
     }
 }
 
