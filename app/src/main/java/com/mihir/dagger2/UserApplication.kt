@@ -20,7 +20,7 @@ class UserApplication() : Application() {
 
        appComponent=DaggerAppComponent.builder().build()
 
-        fakerComponent =DaggerFakerComponent.builder().build()
+        fakerComponent =DaggerFakerComponent.factory().create(this)
 
 
     }
