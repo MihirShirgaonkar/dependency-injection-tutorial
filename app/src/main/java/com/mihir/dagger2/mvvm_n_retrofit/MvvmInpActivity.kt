@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.mihir.dagger2.R
 import com.mihir.dagger2.UserApplication
@@ -17,14 +18,23 @@ class MvvmInpActivity : AppCompatActivity() {
 
     @Inject
     lateinit var productViewModelFactory: ProductViewModelFactory
+
+//    @Inject
+//    lateinit var map: Map<Class<*>,ViewModel>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mvvm_inp)
 
 
-        val component = (application as UserApplication).fakerComponent.inject(this)
+        val component = (application as UserApplication).fakerComponent
+            component.inject(this)
+
+       val cls =  component.getMap()
 
 
+
+//        get(ProductViewModel::class.java)
         viewModel = ViewModelProvider(this,productViewModelFactory).get(ProductViewModel::class.java)
 
         val textView = findViewById<TextView>(R.id.text)
