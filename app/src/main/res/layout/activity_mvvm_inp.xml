@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".mvvm_n_retrofit.MvvmInpActivity">
+    tools:context=".dagger.mvvm_n_retrofit_n_room.MvvmInpActivity">
 
     <TextView
         android:layout_width="match_parent"
