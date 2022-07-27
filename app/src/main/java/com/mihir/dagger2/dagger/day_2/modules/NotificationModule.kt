@@ -5,8 +5,10 @@ import com.mihir.dagger2.dagger.day_2.entities.MessageService
 import com.mihir.dagger2.dagger.day_2.entities.NotificarionService2
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ActivityComponent
 import javax.inject.Named
-
+@InstallIn(ActivityComponent::class)
 @Module
 class NotificationModule() {
 

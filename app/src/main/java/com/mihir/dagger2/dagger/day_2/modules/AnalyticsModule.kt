@@ -4,7 +4,10 @@ import com.mihir.dagger2.day_2.component.AnalyticsService
 import com.mihir.dagger2.day_2.component.Mixpanel
 import dagger.Binds
 import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
+@InstallIn(SingletonComponent::class)
 @Module
 abstract class AnalyticsModule {
 

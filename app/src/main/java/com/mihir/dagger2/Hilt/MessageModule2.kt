@@ -1,4 +1,4 @@
-package com.mihir.dagger2.dagger.day_1.Modules
+package com.mihir.dagger2.Hilt
 
 import com.mihir.dagger2.dagger.day_1.MessageQuilifier
 import com.mihir.dagger2.dagger.day_1.component.UserRegistrationComponent
@@ -13,20 +13,19 @@ import javax.inject.Named
 
 @Module
 @InstallIn(ActivityComponent::class)
-class MessageModule() {
+class MessageModule2() {
 
 
-    @MessageQuilifier
     @Provides
-    fun getMessageModule() : NotificationService {
-        return MessageService()
+    fun getMessageModule() : NotificationService2 {
+        return MessageService2()
     }
 
-    @Named("email")
-    @Provides
-    fun getEmailModule(emailService: EmailService) : NotificationService {
-        return emailService
-    }
+//    @Named("email")
+//    @Provides
+//    fun getEmailModule(emailService: EmailService2) : NotificationService2 {
+//        return emailService
+//    }
 
 
 }

@@ -5,9 +5,11 @@ import com.mihir.dagger2.dagger.mvvm_n_retrofit_n_room.viewModels.ProductViewMod
 import com.mihir.dagger2.dagger.mvvm_n_retrofit_n_room.viewModels.SampleViewModel
 import dagger.Binds
 import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import dagger.multibindings.ClassKey
 import dagger.multibindings.IntoMap
-
+@InstallIn(SingletonComponent::class)
 @Module
 abstract class ViewModelModules {
 

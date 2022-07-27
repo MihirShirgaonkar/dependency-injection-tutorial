@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.mihir.dagger2.R
 import com.mihir.dagger2.dagger.day_1.Modules.MessageModule
-import com.mihir.dagger2.day_1.component.DaggerUserRegistrationComponent
+import com.mihir.dagger2.dagger.day_1.component.DaggerUserRegistrationComponent
 import com.mihir.dagger2.dagger.day_1.enities.UserRegistrationService
 import javax.inject.Inject
 
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val component = DaggerUserRegistrationComponent.builder()
-            .messageModule(MessageModule(4))
+            .messageModule(MessageModule())
             .build()
 
         component.inject(this)

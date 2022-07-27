@@ -1,14 +1,14 @@
-package com.mihir.dagger2.dagger.day_1.enities
+package com.mihir.dagger2.Hilt
 
 import android.util.Log
 import javax.inject.Inject
 
 
-interface NotificationService{
+interface NotificationService2{
     fun send( string : String)
 }
 
-class EmailService @Inject constructor() : NotificationService {
+class EmailService2 @Inject constructor() : NotificationService2 {
 
     override fun send(string : String){
         Log.d("TAG","Email : ${string}")
@@ -16,7 +16,7 @@ class EmailService @Inject constructor() : NotificationService {
 }
 
 
-class MessageService() : NotificationService {
+class MessageService2  : NotificationService2 {
     override fun send(string: String) {
         Log.d("TAG","Message Sent : ${string} retry count ")
 
